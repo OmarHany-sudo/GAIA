@@ -80,6 +80,7 @@ header nav ul li a:hover {
     color: #333;
     font-size: 1rem;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    will-change: transform, background-color; /* لتحسين الأداء */
 }
 
 .features ul li:hover {
@@ -132,6 +133,7 @@ header nav ul li a:hover {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    will-change: transform, background-color; /* لتحسين الأداء */
 }
 
 .booking-form button:hover {
@@ -183,4 +185,5 @@ footer p {
     to {
         opacity: 1;
         transform: translateX(0);
+    }
     }
