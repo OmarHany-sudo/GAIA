@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Book | Gaia Nutrition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Contact & Book</h1>
+    </header>
+    <main>
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <ul>
+                <li>Email: support@gaianutrition.com</li>
+                <li>Phone: +20 123 456 7890</li>
+                <li>Address: Cairo, Egypt</li>
+            </ul>
+        </section>
+        <section class="booking">
+            <h2>Book a Session</h2>
+            <form action="/submit" method="POST" class="booking-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Gaia Nutrition © 2025. All rights reserved.</p>
+    </footer>
+</body>
+</html>
