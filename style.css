@@ -3,12 +3,12 @@ body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f3f4f6; /* لون خلفية هادي */
-    color: #333; /* النص بلون غامق */
+    background-color: #f3f4f6;
+    color: #333;
 }
 
 header {
-    background-color: #006d77; /* لون أخضر مزرق */
+    background-color: #006d77;
     color: #fff;
     padding: 1.5rem 0;
     text-align: center;
@@ -18,36 +18,31 @@ header {
 header h1 {
     font-size: 2rem;
     margin: 0;
+    animation: fadeIn 1s ease-out;
 }
 
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
+/* التأثير عند مرور الفأرة على الروابط في الـ nav */
 header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.2rem;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #83c5be; /* لون أخضر فاتح عند التمرير */
+    color: #83c5be;
+    transform: translateY(-5px); /* رفع العنصر عند التمرير */
 }
 
 /* قسم البطل */
 .hero {
-    background-color: #83c5be; /* لون أخضر فاتح */
+    background-color: #83c5be;
     color: #fff;
     text-align: center;
     padding: 3rem 1rem;
     border-bottom-left-radius: 50% 20%;
     border-bottom-right-radius: 50% 20%;
+    animation: fadeInUp 1s ease-out;
 }
 
 .hero h2 {
@@ -58,13 +53,15 @@ header nav ul li a:hover {
 .hero p {
     font-size: 1.2rem;
     margin-top: 0.5rem;
+    animation: fadeInUp 1.2s ease-out;
 }
 
 /* المميزات */
 .features {
-    background-color: #edf6f9; /* لون خلفية هادي */
+    background-color: #edf6f9;
     padding: 2rem 1rem;
     text-align: center;
+    animation: fadeIn 1.5s ease-out;
 }
 
 .features h3 {
@@ -73,13 +70,7 @@ header nav ul li a:hover {
     color: #006d77;
 }
 
-.features ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 600px;
-}
-
+/* إضافة تأثيرات hover على العناصر داخل المميزات */
 .features ul li {
     background-color: #fff;
     margin: 0.5rem 0;
@@ -88,7 +79,7 @@ header nav ul li a:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     color: #333;
     font-size: 1rem;
-    transition: transform 0.2s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .features ul li:hover {
@@ -104,6 +95,7 @@ header nav ul li a:hover {
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-out;
 }
 
 .booking-form label {
@@ -130,6 +122,7 @@ header nav ul li a:hover {
     background-color: #f1fdfb;
 }
 
+/* تأثير hover على الأزرار */
 .booking-form button {
     background-color: #006d77;
     color: white;
@@ -138,11 +131,12 @@ header nav ul li a:hover {
     font-size: 1.2rem;
     border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .booking-form button:hover {
     background-color: #83c5be;
+    transform: scale(1.1);
 }
 
 /* الفوتر */
@@ -153,8 +147,40 @@ footer {
     padding: 1rem 0;
     margin-top: 2rem;
     font-size: 1rem;
+    animation: fadeIn 2s ease-out;
 }
 
 footer p {
     margin: 0;
 }
+
+/* إضافة التأثيرات */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
