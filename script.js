@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer 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`
+                "Authorization": `Bearer sk-ijklmnopqrstuvwxijklmnopqrstuvwxijklmnop`
             },
             body: JSON.stringify({
                 model: "text-davinci-003",
