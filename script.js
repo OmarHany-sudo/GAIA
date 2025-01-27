@@ -1,20 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector(".booking-form");
-    form.addEventListener("submit", (e) => {
-        e.preventDefault(); // عشان نمنع إعادة تحميل الصفحة
+    // استشارة غذائية - نموذج الذكاء الاصطناعي
+    const nutritionForm = document.getElementById("nutrition-form");
+    nutritionForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const age = document.getElementById("age").value;
+        const weight = document.getElementById("weight").value;
+        const height = document.getElementById("height").value;
+        const activity = document.getElementById("activity").value;
+        const goal = document.getElementById("goal").value;
+
+        // هنا هنربط النموذج مع الـ AI API
+        const response = await fetch("https://api.openai.com/v1/completions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer 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`
+            },
+            body: JSON.stringify({
+                model: "text-davinci-003",
+                prompt: `Generate a personalized nutrition plan for the following details:
+                    Age: ${age},
+                    Weight: ${weight} kg,
+                    Height: ${height} cm,
+                    Activity Level: ${activity},
+                    Goal: ${goal}.`,
+                max_tokens: 200,
+            }),
+        });
+
+        const data = await response.json();
+        const plan = data.choices[0].text;
+
+        // عرض النتيجة في الصفحة
+        document.getElementById("nutrition-results").style.display = "block";
+        document.getElementById("result-text").textContent = plan;
+    });
+
+    // نموذج الحجز - التأثيرات والتنبيه
+    const bookingForm = document.querySelector(".booking-form");
+    bookingForm.addEventListener("submit", (e) => {
+        e.preventDefault(); // منع إعادة تحميل الصفحة
 
         // تنبيه عند الحجز
         alert("Your booking has been submitted!");
 
-        // إضافة تأثير عندما يتم إرسال الحجز
-        form.classList.add('submitted'); // إضافة class جديد عند الإرسال
+        // إضافة تأثير عند الإرسال
+        bookingForm.classList.add("submitted");
 
-        // تنفيذ شيء آخر بعد الحجز، مثل مسح الحقول
-        form.reset(); // إعادة تعيين الحقول
+        // إعادة تعيين الحقول
+        bookingForm.reset();
 
-        // مثال لتأثير CSS عند الحجز
+        // إزالة التأثير بعد 1.5 ثانية
         setTimeout(() => {
-            form.classList.remove('submitted'); // إزالة تأثير بعد فترة
-        }, 1500); // تأثير يستمر 1.5 ثانية
+            bookingForm.classList.remove("submitted");
+        }, 1500);
     });
 });
