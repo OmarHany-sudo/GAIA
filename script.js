@@ -1,16 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // نموذج الذكاء الاصطناعي للخدمات الغذائية
-    const nutritionForm = document.getElementById("nutrition-form");
-    nutritionForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
+    // قراءة الـ query parameters من الـ URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const age = urlParams.get('age');
+    const weight = urlParams.get('weight');
+    const height = urlParams.get('height');
+    const activity = urlParams.get('activity');
+    const goal = urlParams.get('goal');
 
-        const age = document.getElementById("age").value;
-        const weight = document.getElementById("weight").value;
-        const height = document.getElementById("height").value;
-        const activity = document.getElementById("activity").value;
-        const goal = document.getElementById("goal").value;
-
-        // توليد نص الخطة الغذائية (ممكن تعديلها بناءً على البيانات المدخلة)
+    // إذا تم تحميل القيم من الـ URL، نقوم بعرض الخطة الغذائية
+    if (age && weight && height && activity && goal) {
         const plan = `
         Personalized Nutrition Plan:
         ----------------------------
@@ -27,20 +25,22 @@ document.addEventListener("DOMContentLoaded", () => {
         - Snacks: Almonds and Greek yogurt.
         `;
 
-        // إنشاء ملف PDF باستخدام مكتبة jsPDF
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-
-        // إضافة النص للـ PDF
-        doc.text(plan, 10, 10);
-
-        // تحميل الملف PDF
-        doc.save("nutrition-plan.pdf");
-
-        // إظهار الرسالة للمستخدم
+        // إظهار النتيجة على الصفحة
         document.getElementById("nutrition-results").style.display = "block";
-        document.getElementById("result-text").textContent = "Your personalized nutrition plan has been generated and downloaded as a PDF.";
-    });
+        document.getElementById("result-text").textContent = plan;
+
+        // تحميل الـ PDF بعد فترة قصيرة
+        setTimeout(() => {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // إضافة النص للـ PDF
+            doc.text(plan, 10, 10);
+
+            // تحميل الملف PDF
+            doc.save("nutrition-plan.pdf");
+        }, 1000); // بعد ثانية واحدة
+    }
 
     // نموذج الحجز - التأثيرات والتنبيه
     const bookingForm = document.querySelector(".booking-form");
