@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const activity = document.getElementById("activity").value;
         const goal = document.getElementById("goal").value;
 
-        // هنا هنربط النموذج مع الـ AI API أو نستخدم بيانات افتراضية
+        // توليد نص الخطة الغذائية (ممكن تعديلها بناءً على البيانات المدخلة)
         const plan = `
         Personalized Nutrition Plan:
         ----------------------------
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // تحميل الملف PDF
         doc.save("nutrition-plan.pdf");
 
-        // إظهار الرسالة للمستخدم (اختياري)
+        // إظهار الرسالة للمستخدم
         document.getElementById("nutrition-results").style.display = "block";
         document.getElementById("result-text").textContent = "Your personalized nutrition plan has been generated and downloaded as a PDF.";
     });
