@@ -10,37 +10,36 @@ document.addEventListener("DOMContentLoaded", () => {
         const activity = document.getElementById("activity").value;
         const goal = document.getElementById("goal").value;
 
-        try {
-            // إرسال الطلب لـ DeepSeek API
-            const response = await fetch("https://api.deepseek.com/v1/nutrition-plan", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer sk-f4205b6e4b3947dd8c010933a5a825a6`, // استبدل المفتاح الخاص بك هنا
-                },
-                body: JSON.stringify({
-                    age: age,
-                    weight: weight,
-                    height: height,
-                    activity_level: activity,
-                    goal: goal,
-                }),
-            });
+        // هنا هنربط النموذج مع الـ AI API أو نستخدم بيانات افتراضية
+        const plan = `
+        Personalized Nutrition Plan:
+        ----------------------------
+        Age: ${age}
+        Weight: ${weight} kg
+        Height: ${height} cm
+        Activity Level: ${activity}
+        Goal: ${goal}
 
-            if (!response.ok) {
-                throw new Error("Failed to fetch data from DeepSeek API");
-            }
+        Suggested Plan:
+        - Breakfast: Oatmeal with fruits.
+        - Lunch: Grilled chicken with quinoa and veggies.
+        - Dinner: Salad with olive oil and a source of protein.
+        - Snacks: Almonds and Greek yogurt.
+        `;
 
-            const data = await response.json();
-            const plan = data.plan; // افترض أن DeepSeek بيرجع النتيجة في `plan`
+        // إنشاء ملف PDF باستخدام مكتبة jsPDF
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
 
-            // عرض النتيجة في الصفحة
-            document.getElementById("nutrition-results").style.display = "block";
-            document.getElementById("result-text").textContent = plan;
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            alert("Something went wrong. Please try again.");
-        }
+        // إضافة النص للـ PDF
+        doc.text(plan, 10, 10);
+
+        // تحميل الملف PDF
+        doc.save("nutrition-plan.pdf");
+
+        // إظهار الرسالة للمستخدم (اختياري)
+        document.getElementById("nutrition-results").style.display = "block";
+        document.getElementById("result-text").textContent = "Your personalized nutrition plan has been generated and downloaded as a PDF.";
     });
 
     // نموذج الحجز - التأثيرات والتنبيه
