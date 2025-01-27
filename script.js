@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // استشارة غذائية - نموذج الذكاء الاصطناعي
+    // نموذج الذكاء الاصطناعي للخدمات الغذائية
     const nutritionForm = document.getElementById("nutrition-form");
     nutritionForm.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -10,31 +10,37 @@ document.addEventListener("DOMContentLoaded", () => {
         const activity = document.getElementById("activity").value;
         const goal = document.getElementById("goal").value;
 
-        // هنا هنربط النموذج مع الـ AI API
-        const response = await fetch("https://api.openai.com/v1/completions", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer sk-ijklmnopqrstuvwxijklmnopqrstuvwxijklmnop`
-            },
-            body: JSON.stringify({
-                model: "text-davinci-003",
-                prompt: `Generate a personalized nutrition plan for the following details:
-                    Age: ${age},
-                    Weight: ${weight} kg,
-                    Height: ${height} cm,
-                    Activity Level: ${activity},
-                    Goal: ${goal}.`,
-                max_tokens: 200,
-            }),
-        });
+        try {
+            // إرسال الطلب لـ DeepSeek API
+            const response = await fetch("https://api.deepseek.com/v1/nutrition-plan", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer sk-f4205b6e4b3947dd8c010933a5a825a6`, // استبدل المفتاح الخاص بك هنا
+                },
+                body: JSON.stringify({
+                    age: age,
+                    weight: weight,
+                    height: height,
+                    activity_level: activity,
+                    goal: goal,
+                }),
+            });
 
-        const data = await response.json();
-        const plan = data.choices[0].text;
+            if (!response.ok) {
+                throw new Error("Failed to fetch data from DeepSeek API");
+            }
 
-        // عرض النتيجة في الصفحة
-        document.getElementById("nutrition-results").style.display = "block";
-        document.getElementById("result-text").textContent = plan;
+            const data = await response.json();
+            const plan = data.plan; // افترض أن DeepSeek بيرجع النتيجة في `plan`
+
+            // عرض النتيجة في الصفحة
+            document.getElementById("nutrition-results").style.display = "block";
+            document.getElementById("result-text").textContent = plan;
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            alert("Something went wrong. Please try again.");
+        }
     });
 
     // نموذج الحجز - التأثيرات والتنبيه
