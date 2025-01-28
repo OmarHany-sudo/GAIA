@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // قراءة الـ query parameters من الـ URL
     const urlParams = new URLSearchParams(window.location.search);
     const age = urlParams.get('age');
     const weight = urlParams.get('weight');
@@ -7,23 +6,94 @@ document.addEventListener("DOMContentLoaded", () => {
     const activity = urlParams.get('activity');
     const goal = urlParams.get('goal');
 
-    // إذا تم تحميل القيم من الـ URL، نقوم بعرض الخطة الغذائية
+    // إذا تم تحميل القيم من الـ URL، نقوم بتوليد النظام الغذائي المناسب
     if (age && weight && height && activity && goal) {
-        const plan = `
-        Personalized Nutrition Plan:
-        ----------------------------
-        Age: ${age}
-        Weight: ${weight} kg
-        Height: ${height} cm
-        Activity Level: ${activity}
-        Goal: ${goal}
+        let plan = "";
 
-        Suggested Plan:
-        - Breakfast: Oatmeal with fruits.
-        - Lunch: Grilled chicken with quinoa and veggies.
-        - Dinner: Salad with olive oil and a source of protein.
-        - Snacks: Almonds and Greek yogurt.
-        `;
+        // تحديد النظام الغذائي بناءً على الهدف ومستوى النشاط
+        if (goal === "lose") {
+            if (activity === "sedentary") {
+                plan = `
+                Personalized Nutrition Plan for Weight Loss:
+                ----------------------------
+                Age: ${age}
+                Weight: ${weight} kg
+                Height: ${height} cm
+                Activity Level: ${activity}
+                Goal: ${goal}
+
+                Suggested Plan:
+                - Breakfast: فول مدمس مع خبز بلدي وليمون.
+                - Lunch: دجاج مشوي مع سلطة خضار (خيار، طماطم، جزر، بصل) وزيت الزيتون.
+                - Dinner: سمك مشوي مع أرز بني.
+                - Snacks: زبادي طبيعي أو تفاحة.
+                `;
+            } else if (activity === "light") {
+                plan = `
+                Personalized Nutrition Plan for Weight Loss:
+                ----------------------------
+                Age: ${age}
+                Weight: ${weight} kg
+                Height: ${height} cm
+                Activity Level: ${activity}
+                Goal: ${goal}
+
+                Suggested Plan:
+                - Breakfast: شوفان مع حليب وتمر.
+                - Lunch: دجاج مشوي مع أرز بسمتي وسلطة.
+                - Dinner: سمك مشوي مع خضار مشوية.
+                - Snacks: زبادي مع عسل.
+                `;
+            } else {
+                plan = `
+                Personalized Nutrition Plan for Weight Loss:
+                ----------------------------
+                Age: ${age}
+                Weight: ${weight} kg
+                Height: ${height} cm
+                Activity Level: ${activity}
+                Goal: ${goal}
+
+                Suggested Plan:
+                - Breakfast: شوفان مع حليب وموز.
+                - Lunch: لحمة مشوية مع أرز وسلطة.
+                - Dinner: خضار مسلوقة مع دجاج مشوي.
+                - Snacks: جزر مع حمص.
+                `;
+            }
+        } else if (goal === "maintain") {
+            plan = `
+            Personalized Nutrition Plan for Weight Maintenance:
+            ----------------------------
+            Age: ${age}
+            Weight: ${weight} kg
+            Height: ${height} cm
+            Activity Level: ${activity}
+            Goal: ${goal}
+
+            Suggested Plan:
+            - Breakfast: بيض مسلوق مع خبز أسمر.
+            - Lunch: كفتة مشوية مع أرز أبيض وسلطة خضراء.
+            - Dinner: حمص مع طحينة وخبز بلدي.
+            - Snacks: مكسرات أو فاكهة موسمية.
+            `;
+        } else if (goal === "gain") {
+            plan = `
+            Personalized Nutrition Plan for Weight Gain:
+            ----------------------------
+            Age: ${age}
+            Weight: ${weight} kg
+            Height: ${height} cm
+            Activity Level: ${activity}
+            Goal: ${goal}
+
+            Suggested Plan:
+            - Breakfast: بان كيك مع زبدة فول سوداني وتمر.
+            - Lunch: كباب مشوي مع أرز أبيض وصوص الطماطم.
+            - Dinner: معكرونة مع دجاج وبيض مسلوق.
+            - Snacks: عصير فواكه طبيعي أو خبز مع زبدة.
+            `;
+        }
 
         // إظهار النتيجة على الصفحة
         document.getElementById("nutrition-results").style.display = "block";
@@ -48,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault(); // منع إعادة تحميل الصفحة
 
         // تنبيه عند الحجز
-        alert("Your booking has been submitted!");
+        alert("تم إرسال الحجز!");
 
         // إضافة تأثير عند الإرسال
         bookingForm.classList.add("submitted");
