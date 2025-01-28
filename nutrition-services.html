@@ -1,77 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nutrition Services & Booking</title>
+    <title>خدمات التغذية والحجز</title>
     <link rel="stylesheet" href="style.css">
 
-    <!-- إضافة مكتبة jsPDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <header class="header">
-        <h1>Nutrition Services & Booking</h1>
+        <h1>خدمات التغذية والحجز</h1>
     </header>
     <main>
         <section class="nutrition-form">
-            <h2>Get Your Personalized Nutrition Plan</h2>
+            <h2>احصل على خطة تغذية شخصية</h2>
             <form id="nutrition-form">
-                <label for="age">Age:</label>
+                <label for="age">العمر:</label>
                 <input type="number" id="age" name="age" required>
-                
-                <label for="weight">Weight (kg):</label>
+
+                <label for="weight">الوزن (كجم):</label>
                 <input type="number" id="weight" name="weight" required>
-                
-                <label for="height">Height (cm):</label>
+
+                <label for="height">الطول (سم):</label>
                 <input type="number" id="height" name="height" required>
-                
-                <label for="activity">Activity Level:</label>
+
+                <label for="activity">مستوى النشاط:</label>
                 <select id="activity" name="activity" required>
-                    <option value="sedentary">Sedentary (little or no exercise)</option>
-                    <option value="light">Lightly active (light exercise/sports)</option>
-                    <option value="moderate">Moderately active (moderate exercise/sports)</option>
-                    <option value="active">Very active (hard exercise/sports)</option>
+                    <option value="sedentary">قليل النشاط (قليل أو لا يوجد تمارين)</option>
+                    <option value="light">نشاط خفيف (تمارين خفيفة/رياضة)</option>
+                    <option value="moderate">نشاط متوسط (تمارين متوسطة/رياضة)</option>
+                    <option value="active">نشاط عالٍ (تمارين شاقة/رياضة)</option>
                 </select>
-                
-                <label for="goal">Your Goal:</label>
+
+                <label for="goal">هدفك:</label>
                 <select id="goal" name="goal" required>
-                    <option value="lose">Lose weight</option>
-                    <option value="maintain">Maintain weight</option>
-                    <option value="gain">Gain weight</option>
+                    <option value="lose">فقدان الوزن</option>
+                    <option value="maintain">الحفاظ على الوزن</option>
+                    <option value="gain">زيادة الوزن</option>
                 </select>
-                
-                <button type="submit">Generate Plan</button>
+
+                <button type="submit">إنشاء خطة</button>
             </form>
         </section>
 
         <section class="nutrition-results" id="nutrition-results" style="display:none;">
-            <h2>Your Personalized Plan</h2>
+            <h2>خطتك الغذائية الشخصية</h2>
             <p id="result-text"></p>
         </section>
 
         <section class="booking">
-            <h2>Book a Nutrition Consultation</h2>
+            <h2>احجز استشارة تغذية</h2>
             <form action="#" method="POST" class="booking-form">
-                <label for="name">Full Name:</label>
+                <label for="name">الاسم بالكامل:</label>
                 <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
+
+                <label for="email">البريد الإلكتروني:</label>
                 <input type="email" id="email" name="email" required>
-                
-                <label for="date">Preferred Date:</label>
+
+                <label for="date">التاريخ المفضل:</label>
                 <input type="date" id="date" name="date" required>
-                
-                <button type="submit" class="btn">Submit Booking</button>
+
+                <button type="submit" class="btn">إرسال الحجز</button>
             </form>
         </section>
     </main>
-    
+
     <footer class="footer">
-        <p>Gaia Nutrition © 2025. All rights reserved.</p>
+        <p>Gaia Nutrition © 2025. جميع الحقوق محفوظة.</p>
     </footer>
 
-    <!-- تضمين ملف السكربت الخارجي -->
     <script src="script.js"></script>
 </body>
 </html>
