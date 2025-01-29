@@ -1,55 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact & Book | Gaia Nutrition</title>
+    <title>التواصل والحجز | جايا للتغذية</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <h1 class="fadeIn">Gaia Nutrition</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="nutrition-services.html">Nutrition Services</a></li>
-                </ul>
-            </nav>
-    
-    </header>
-    <main>
-        <section class="contact fadeIn">
-            <h2>Contact Us</h2>
-            <ul>
-                <li>Email: support@gaianutrition.com</li>
-                <li>Phone: +20 123 456 7890</li>
-                <li>Address: Cairo, Egypt</li>
-            </ul>
-        </section>
-        <section class="booking fadeIn">
-            <h2>Book a Session</h2>
-            <form action="/submit" method="POST" class="booking-form">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="date">Preferred Date:</label>
-                <input type="date" id="date" name="date" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-                
-                <button type="submit" class="btn">Submit</button>
-            </form>
-        </section>
-    </main>
-    <footer class="footer">
-        <p>Gaia Nutrition © 2025. All rights reserved.</p>
-    </footer>
+
+<!-- الهيدر -->
+<header class="header">
+    <h1 class="fadeIn">جايا للتغذية</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="projects.html">المشاريع</a></li>
+            <li><a href="about.html">من أنا</a></li>
+            <li><a href="contact.html" class="active">اتصل بنا</a></li>
+            <li><a href="nutrition-services.html">خدمات التغذية</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- قسم التواصل -->
+<main>
+    <section class="contact fadeIn">
+        <h2>اتصل بنا</h2>
+        <ul>
+            <li>📧 البريد الإلكتروني: support@gaianutrition.com</li>
+            <li>📞 الهاتف: +20 123 456 7890</li>
+            <li>📍 العنوان: القاهرة، مصر</li>
+        </ul>
+    </section>
+
+    <!-- قسم الحجز -->
+    <section class="booking fadeIn">
+        <h2>احجز جلسة</h2>
+        <form action="/submit" method="POST" class="booking-form">
+            <label for="name">الاسم الكامل:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="date">التاريخ المفضل:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="message">الرسالة:</label>
+            <textarea id="message" name="message" rows="4" placeholder="أضف أي ملاحظات هنا..."></textarea>
+            
+            <button type="submit" class="btn">إرسال الطلب</button>
+        </form>
+    </section>
+</main>
+
+<!-- الفوتر -->
+<footer class="footer">
+    <p>© 2025 جايا للتغذية. جميع الحقوق محفوظة.</p>
+</footer>
+
 </body>
 </html>

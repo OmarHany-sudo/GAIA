@@ -1,44 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Omar Mohamed Khalaf</title>
+    <title>من أنا - Gaia Nutrition</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1 class="fadeIn">Gaia Nutrition</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="nutrition-services.html">Nutrition Services</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="about-section fadeIn">
-            <h1>About Me</h1>
-            <p class="fadeInUp">
-                My name is Omar Mohamed Khalaf, a passionate Nutritionist who graduated from 
-                6th of October University, Faculty of Applied Health Sciences, Department of Nutrition. 
-                I have always been keen on exploring the science of healthy living and its impact on people's lives. 
-            </p>
-            <p class="fadeInUp">
-                In addition to my professional background, I am also skilled in web development, 
-                constantly improving my skills and working on various exciting projects. 
-                I enjoy combining my technical and healthcare knowledge to create innovative solutions.
-            </p>
-            <p class="fadeInUp">
-                Feel free to explore my projects and connect with me for any collaboration opportunities!
-            </p>
-        </section>
-    </main>
-    <footer>
-        <p class="fadeIn">© 2024 Omar Mohamed Khalaf. All Rights Reserved.</p>
-    </footer>
+
+<!-- الهيدر -->
+<header>
+  <div class="container">
+    <img src="logo.png" class="logo" alt="Gaia Nutrition">
+    <h1 class="fadeIn">Gaia Nutrition</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="projects.html">المشاريع</a></li>
+            <li><a href="about.html" class="active">من أنا</a></li>
+            <li><a href="contact.html">اتصل بي</a></li>
+            <li><a href="nutrition-services.html">خدمات التغذية</a></li>
+        </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- قسم التعريف عني -->
+<section class="hero-section">
+  <div class="container">
+    <h1 class="hero-title mb-4">تعرف عليّ أكثر</h1>
+    <p class="lead fs-4">رحلتي في مجال التغذية وتطوير الويب</p>
+  </div>
+</section>
+
+<!-- تفاصيل عني -->
+<section class="about-section py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="about-me.jpg" class="img-fluid rounded" alt="عمر محمد خلف">
+      </div>
+      <div class="col-md-6">
+        <h2>من أنا؟</h2>
+        <p>
+          اسمي <strong>عمر محمد خلف</strong>، أخصائي تغذية شغوف بصحة الإنسان،
+          تخرجت من جامعة 6 أكتوبر، كلية العلوم الصحية التطبيقية، قسم التغذية.
+        </p>
+        <p>
+          أسعى دائمًا إلى مساعدة الآخرين في تحقيق نمط حياة صحي من خلال برامج غذائية مخصصة
+          بناءً على احتياجات كل فرد.
+        </p>
+        <p>
+          بالإضافة إلى ذلك، أنا مطور ويب أعمل على تحسين مهاراتي في تصميم المواقع والتطبيقات،
+          وأحب الجمع بين خبرتي في التغذية والتكنولوجيا لإنشاء حلول مبتكرة.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- قسم الحجز -->
+<section class="nutrition-form my-5 py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">احجز استشارتك الآن</h2>
+    <form class="row g-4">
+      <div class="col-md-6">
+        <input type="text" class="form-control form-input" placeholder="الاسم الكامل">
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control form-input" placeholder="البريد الإلكتروني">
+      </div>
+      <div class="col-12 text-center">
+        <button class="btn btn-primary btn-lg px-5 py-3">إرسال الطلب</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- الفوتر -->
+<footer class="footer">
+  <div class="container text-center">
+    <div class="social-icons mb-4">
+      <img src="facebook-icon.svg" class="social-icon" alt="فيسبوك">
+      <img src="instagram-icon.svg" class="social-icon" alt="إنستجرام">
+    </div>
+    <p class="mb-0">© 2024 جايا للتغذية. جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+
 </body>
 </html>
+
