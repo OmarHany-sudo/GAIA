@@ -1,180 +1,99 @@
-/* إعدادات الأساس */
+/* تحسين الألوان والخطوط */
 body {
-    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* لون فاتح أكثر */
+    color: #2c3e50; /* لون نص داكن */
+    font-family: 'Tajawal', sans-serif; /* خط عربي أنيق */
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
 }
 
-/* إضافة تأثيرات ظهور للمحتوى */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* تحسين النافبار */
+.navbar {
+    background-color: #28a745;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل */
 }
 
-.fadeIn {
-    animation: fadeIn 1.5s ease-out;
-}
-
-/* تنسيق الهيدر */
-header {
-    background-color: #006d77;
+.navbar a {
     color: white;
-    padding: 1rem 0;
-    text-align: center;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s; /* تأثير عند التمرير */
+    border-radius: 4px;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
+.navbar a:hover {
+    background-color: #218838; /* تغيير اللون عند التمرير */
 }
 
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* تنسيق الـ Active Link */
-header nav ul li a.active {
-    font-weight: bold;
-}
-
-/* تنسيق المحتوى الرئيسي */
-main {
-    padding: 20px;
-}
-
-/* تنسيق مشاريع المستخدم */
-.projects-section {
+/* تحسين الأقسام */
+section {
     padding: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    margin: 1.5rem auto;
+    max-width: 1200px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* ظل أنعم */
+    border-radius: 10px;
+    transition: transform 0.3s; /* تأثير عند التمرير */
 }
 
-/* تنسيق العناصر داخل المشاريع */
-.project-item {
-    background-color: #ffffff;
+section:hover {
+    transform: translateY(-5px); /* رفع القسم قليلاً */
+}
+
+/* تحسين الأزرار */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px; /* حواف مدورة أكثر */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* تكبير الزر عند التمرير */
+}
+
+/* تحسين النتائج */
+#nutrition-results {
+    background: #fff;
     padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.project-item h2 {
-    font-size: 1.8rem;
-    color: #006d77;
-}
-
-.project-item p {
-    font-size: 1.1rem;
-    color: #555;
-}
-
-/* تأثير عند المرور بالفأرة على العناصر */
-.project-item:hover {
-    transform: scale(1.05);
-}
-
-/* تنسيق الفوتر */
-footer {
-    background-color: #006d77;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
-}
-
-/* تنسيق الصفحة الخاصة بالـ About */
-.about-section {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: #ffffff;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.about-section p {
+#result-text {
+    white-space: pre-line; /* الحفاظ على تنسيق النص */
     font-size: 1.1rem;
-    color: #555;
 }
 
-/* تنسيق الفورم */
+/* تحسين النموذج */
 .booking-form {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.booking-form label {
-    margin: 10px 0 5px;
-    font-weight: bold;
-}
-
-.booking-form input, .booking-form textarea {
-    padding: 10px;
-    margin-bottom: 20px;
+.booking-form input, .booking-form select {
+    padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 1rem;
+    width: 100%;
 }
 
-.booking-form button {
-    background-color: #006d77;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
+.booking-form input:focus, .booking-form select:focus {
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
 }
 
-.booking-form button:hover {
-    background-color: #004d40;
+.submitted {
+    animation: fadeOut 1.5s ease-in-out; /* تأثير عند الإرسال */
 }
 
-/* تنسيق الصفحة الخاصة بالـ Contact */
-.contact ul {
-    list-style: none;
-    padding: 0;
-}
-
-.contact ul li {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-/* تحسين الاستجابة للموبايل */
-@media screen and (max-width: 768px) {
-    header nav ul {
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    header nav ul li {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .projects-section, .about-section, .contact {
-        padding: 1rem;
-    }
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
 }
