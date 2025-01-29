@@ -1,99 +1,93 @@
-/* تحسين الألوان والخطوط */
+/* تنسيق عام */
 body {
-    background-color: #f8f9fa; /* لون فاتح أكثر */
-    color: #2c3e50; /* لون نص داكن */
-    font-family: 'Tajawal', sans-serif; /* خط عربي أنيق */
-    line-height: 1.6;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #2b2d42;
+    font-family: 'Tajawal', sans-serif;
+    line-height: 1.8;
+    min-height: 100vh;
 }
 
-/* تحسين النافبار */
+/* الهيدر */
 .navbar {
-    background-color: #28a745;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل */
+    background: rgba(40, 167, 69, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .navbar a {
-    color: white;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s; /* تأثير عند التمرير */
-    border-radius: 4px;
+    color: white !important;
+    padding: 0.8rem 1.2rem;
+    margin: 0 0.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
 }
 
 .navbar a:hover {
-    background-color: #218838; /* تغيير اللون عند التمرير */
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
 }
 
-/* تحسين الأقسام */
-section {
-    padding: 2rem;
-    margin: 1.5rem auto;
-    max-width: 1200px;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* ظل أنعم */
-    border-radius: 10px;
-    transition: transform 0.3s; /* تأثير عند التمرير */
-}
-
-section:hover {
-    transform: translateY(-5px); /* رفع القسم قليلاً */
-}
-
-/* تحسين الأزرار */
-button {
-    background-color: #28a745;
+/* القسم الرئيسي */
+.hero-section {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: url('1000204529.jpg') center/cover;
     color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px; /* حواف مدورة أكثر */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-button:hover {
-    background-color: #218838;
-    transform: scale(1.05); /* تكبير الزر عند التمرير */
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
 }
 
-/* تحسين النتائج */
-#nutrition-results {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+/* بطاقات الخدمات */
+.feature-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-#result-text {
-    white-space: pre-line; /* الحفاظ على تنسيق النص */
-    font-size: 1.1rem;
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* تحسين النموذج */
+/* النموذج */
 .booking-form {
-    display: grid;
-    gap: 1rem;
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
-.booking-form input, .booking-form select {
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 100%;
+/* الأزرار */
+.btn-gaia {
+    background: #28a745;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
-.booking-form input:focus, .booking-form select:focus {
-    outline: none;
-    border-color: #28a745;
-    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
+.btn-gaia:hover {
+    background: #218838;
+    transform: scale(1.05);
 }
 
-.submitted {
-    animation: fadeOut 1.5s ease-in-out; /* تأثير عند الإرسال */
-}
-
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0.5; }
+/* الفوتر */
+footer {
+    background: #2b2d42;
+    color: white;
+    padding: 3rem 0;
+    margin-top: 5rem;
 }
