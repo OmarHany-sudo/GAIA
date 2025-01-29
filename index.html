@@ -1,51 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>GAIA</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaia Nutrition</title>
-    <link rel="icon" type="image/x-icon" href="">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="header">
-        <h1 class="fadeIn">Gaia Nutrition</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="nutrition-services.html">Nutrition Services</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="projects-section fadeIn">
-            <h2 class="fadeInUp">Discover the Path to Healthy Living</h2>
-            <p class="fadeInUp">Join Gaia Nutrition and transform your life today!</p>
-        </section>
-        <section class="Features-section fadeIn">
-            <h3 class="fadeIn">Our Features:</h3>
-            <ul>
-                <div class="project-item">
-                <p class="hover-effect">Health Diagnosis</p>
-            </div>
-            <div class="project-item">
-                <p class="hover-effect">Personalized Food Guidance</p>
-            </div>
-            <div class="project-item">
-                <p class="hover-effect">Avoid Disease Risks</p>
-            </div>
-                <div class="project-item">
-                <p class="hover-effect">Obesity Treatment</p>
-            </div>
-            </ul>
-        </section>
-    </main>
-    <footer class="footer">
-        <p class="fadeIn">Gaia Nutrition © 2025. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+<!-- الهيدر -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <img src="logo.png" class="logo" alt="Gaia Nutrition">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">الرئيسية</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">الخدمات</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#plans">الخطط</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">اتصل بنا</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- القسم الرئيسي -->
+<section class="hero-section">
+  <div class="container">
+    <h1 class="hero-title mb-4">رحلتك نحو حياة صحية تبدأ هنا</h1>
+    <p class="lead fs-4">خطط غذائية شخصية بواسطة أخصائيين معتمدين</p>
+  </div>
+</section>
+
+<!-- الخدمات -->
+<section id="services" class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="service-card text-center">
+          <img src="diet-plan-icon.svg" class="service-icon" alt="خطط غذائية">
+          <h3>خطط غذائية مخصصة</h3>
+          <p>تصميم برامج تناسب احتياجاتك اليومية</p>
+        </div>
+      </div>
+      <!-- بطاقات أخرى -->
+    </div>
+  </div>
+</section>
+
+<!-- نموذج الحجز -->
+<section class="nutrition-form my-5 py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">احجز استشارتك الآن</h2>
+    <form class="row g-4">
+      <div class="col-md-6">
+        <input type="text" class="form-control form-input" placeholder="الاسم الكامل">
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control form-input" placeholder="البريد الإلكتروني">
+      </div>
+      <!-- حقول أخرى -->
+      <div class="col-12 text-center">
+        <button class="btn btn-primary btn-lg px-5 py-3">إرسال الطلب</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- الفوتر -->
+<footer class="footer">
+  <div class="container text-center">
+    <div class="social-icons mb-4">
+      <img src="facebook-icon.svg" class="social-icon" alt="فيسبوك">
+      <img src="instagram-icon.svg" class="social-icon" alt="إنستجرام">
+    </div>
+    <p class="mb-0">© 2024 جايا للتغذية. جميع الحقوق محفوظة</p>
+  </div>
+</footer>
