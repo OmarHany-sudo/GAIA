@@ -9,54 +9,96 @@
 <body>
 
 <!-- الهيدر -->
-<header class="header">
-    <h1 class="fadeIn">جايا للتغذية</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="projects.html">المشاريع</a></li>
-            <li><a href="about.html">من أنا</a></li>
-            <li><a href="contact.html" class="active">اتصل بنا</a></li>
-            <li><a href="nutrition-services.html">خدمات التغذية</a></li>
-        </ul>
-    </nav>
-</header>
-
+<header>
+    <div class="container text-center">
+      <img src="logo.png" class="logo" alt="Gaia Nutrition">
+      <h1 class="fadeIn">Gaia Nutrition</h1>
+      <button id="toggle-mode" class="btn-mode">🌙</button>
+      <nav>
+          <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="projects.html">المشاريع</a></li>
+              <li><a href="about.html" class="active">من أنا</a></li>
+              <li><a href="contact.html">اتصل بي</a></li>
+              <li><a href="nutrition-services.html">خدمات التغذية</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleModeBtn = document.getElementById("toggle-mode");
+      const body = document.body;
+  
+      // التحقق مما إذا كان المستخدم قد قام بتحديد وضع معين سابقًا
+      const savedMode = localStorage.getItem("theme");
+  
+      if (savedMode === "night") {
+          body.classList.add("night-mode");
+          toggleModeBtn.textContent = "☀️"; // تغيير الرمز إلى الشمس
+      } else {
+          body.classList.remove("night-mode");
+          toggleModeBtn.textContent = "🌙"; // تغيير الرمز إلى القمر
+      }
+  
+      // عند النقر على الزر، تغيير المظهر
+      toggleModeBtn.addEventListener("click", () => {
+          body.classList.toggle("night-mode");
+  
+          // حفظ التفضيل في Local Storage
+          if (body.classList.contains("night-mode")) {
+              localStorage.setItem("theme", "night");
+              toggleModeBtn.textContent = "☀️"; // وضع النهار
+          } else {
+              localStorage.setItem("theme", "day");
+              toggleModeBtn.textContent = "🌙"; // وضع الليل
+          }
+      });
+  });
+  </script>
+  
 <!-- قسم التواصل -->
 <main>
     <section class="contact fadeIn">
-        <h2>اتصل بنا</h2>
-        <ul>
-            <li>📧 البريد الإلكتروني: support@gaianutrition.com</li>
-            <li>📞 الهاتف: +20 123 456 7890</li>
-            <li>📍 العنوان: القاهرة، مصر</li>
-        </ul>
+        <div class="container text-center">
+            <h2>اتصل بنا</h2>
+            <ul class="contact-info">
+                <li>📧 البريد الإلكتروني: <a href="mailto:support@gaianutrition.com">support@gaianutrition.com</a></li>
+                <li>📞 الهاتف: <a href="tel:+201234567890">+20 123 456 7890</a></li>
+                <li>📍 العنوان: القاهرة، مصر</li>
+            </ul>
+        </div>
     </section>
 
     <!-- قسم الحجز -->
     <section class="booking fadeIn">
-        <h2>احجز جلسة</h2>
-        <form action="/submit" method="POST" class="booking-form">
-            <label for="name">الاسم الكامل:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">البريد الإلكتروني:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="date">التاريخ المفضل:</label>
-            <input type="date" id="date" name="date" required>
-            
-            <label for="message">الرسالة:</label>
-            <textarea id="message" name="message" rows="4" placeholder="أضف أي ملاحظات هنا..."></textarea>
-            
-            <button type="submit" class="btn">إرسال الطلب</button>
-        </form>
+        <div class="container text-center">
+            <h2>احجز جلسة</h2>
+            <form action="/submit" method="POST" class="booking-form">
+                <label for="name">الاسم الكامل:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="date">التاريخ المفضل:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="message">الرسالة:</label>
+                <textarea id="message" name="message" rows="4" placeholder="أضف أي ملاحظات هنا..."></textarea>
+                
+                <button type="submit" class="btn btn-primary">إرسال الطلب</button>
+            </form>
+        </div>
     </section>
 </main>
 
 <!-- الفوتر -->
 <footer class="footer">
-    <p>© 2025 جايا للتغذية. جميع الحقوق محفوظة.</p>
+    <div class="container text-center">
+        <p>© 2025 جايا للتغذية. جميع الحقوق محفوظة.</p>
+    </div>
 </footer>
 
 </body>

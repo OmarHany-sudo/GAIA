@@ -10,9 +10,10 @@
 
 <!-- الهيدر -->
 <header>
-  <div class="container">
+  <div class="container text-center">
     <img src="logo.png" class="logo" alt="Gaia Nutrition">
     <h1 class="fadeIn">Gaia Nutrition</h1>
+    <button id="toggle-mode" class="btn-mode">🌙</button>
     <nav>
         <ul>
             <li><a href="index.html">الرئيسية</a></li>
@@ -25,69 +26,91 @@
   </div>
 </header>
 
-<!-- قسم التعريف عني -->
-<section class="hero-section">
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleModeBtn = document.getElementById("toggle-mode");
+    const body = document.body;
+
+    // التحقق مما إذا كان المستخدم قد قام بتحديد وضع معين سابقًا
+    const savedMode = localStorage.getItem("theme");
+
+    if (savedMode === "night") {
+        body.classList.add("night-mode");
+        toggleModeBtn.textContent = "☀️"; // تغيير الرمز إلى الشمس
+    } else {
+        body.classList.remove("night-mode");
+        toggleModeBtn.textContent = "🌙"; // تغيير الرمز إلى القمر
+    }
+
+    // عند النقر على الزر، تغيير المظهر
+    toggleModeBtn.addEventListener("click", () => {
+        body.classList.toggle("night-mode");
+
+        // حفظ التفضيل في Local Storage
+        if (body.classList.contains("night-mode")) {
+            localStorage.setItem("theme", "night");
+            toggleModeBtn.textContent = "☀️"; // وضع النهار
+        } else {
+            localStorage.setItem("theme", "day");
+            toggleModeBtn.textContent = "🌙"; // وضع الليل
+        }
+    });
+});
+</script>
+
+
+<!-- قسم التعريف -->
+<section class="hero-section text-center">
   <div class="container">
-    <h1 class="hero-title mb-4">تعرف عليّ أكثر</h1>
-    <p class="lead fs-4">رحلتي في مجال التغذية وتطوير الويب</p>
+    <h1 class="hero-title">تعرف عليّ أكثر</h1>
+    <p class="lead">رحلتي في مجال التغذية وتطوير الويب</p>
   </div>
 </section>
 
 <!-- تفاصيل عني -->
-<section class="about-section py-5">
+<section class="about-section py-5 text-center">
   <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <img src="about-me.jpg" class="img-fluid rounded" alt="عمر محمد خلف">
-      </div>
-      <div class="col-md-6">
-        <h2>من أنا؟</h2>
-        <p>
-          اسمي <strong>عمر محمد خلف</strong>، أخصائي تغذية شغوف بصحة الإنسان،
-          تخرجت من جامعة 6 أكتوبر، كلية العلوم الصحية التطبيقية، قسم التغذية.
-        </p>
-        <p>
-          أسعى دائمًا إلى مساعدة الآخرين في تحقيق نمط حياة صحي من خلال برامج غذائية مخصصة
-          بناءً على احتياجات كل فرد.
-        </p>
-        <p>
-          بالإضافة إلى ذلك، أنا مطور ويب أعمل على تحسين مهاراتي في تصميم المواقع والتطبيقات،
-          وأحب الجمع بين خبرتي في التغذية والتكنولوجيا لإنشاء حلول مبتكرة.
-        </p>
-      </div>
+    <div class="profile-container">
+      <img src="about-me.jpg" class="profile-img" alt="عمر محمد خلف">
+      <h2>من أنا؟</h2>
+      <p>
+        اسمي <strong>عمر محمد خلف</strong>، أخصائي تغذية شغوف بصحة الإنسان،
+        تخرجت من جامعة 6 أكتوبر، كلية العلوم الصحية التطبيقية، قسم التغذية.
+      </p>
+      <p>
+        أسعى دائمًا إلى مساعدة الآخرين في تحقيق نمط حياة صحي من خلال برامج غذائية مخصصة
+        بناءً على احتياجات كل فرد.
+      </p>
+      <p>
+        بالإضافة إلى ذلك، أنا مطور ويب أعمل على تحسين مهاراتي في تصميم المواقع والتطبيقات،
+        وأحب الجمع بين خبرتي في التغذية والتكنولوجيا لإنشاء حلول مبتكرة.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- قسم الحجز -->
-<section class="nutrition-form my-5 py-5">
+<!-- نموذج الحجز -->
+<section class="nutrition-form my-5 py-5 text-center">
   <div class="container">
-    <h2 class="text-center mb-5">احجز استشارتك الآن</h2>
-    <form class="row g-4">
-      <div class="col-md-6">
-        <input type="text" class="form-control form-input" placeholder="الاسم الكامل">
-      </div>
-      <div class="col-md-6">
-        <input type="email" class="form-control form-input" placeholder="البريد الإلكتروني">
-      </div>
-      <div class="col-12 text-center">
-        <button class="btn btn-primary btn-lg px-5 py-3">إرسال الطلب</button>
-      </div>
+    <h2>احجز استشارتك الآن</h2>
+    <form class="form-container">
+      <input type="text" class="form-input" placeholder="الاسم الكامل" required>
+      <input type="email" class="form-input" placeholder="البريد الإلكتروني" required>
+      <button class="btn btn-primary">إرسال الطلب</button>
     </form>
   </div>
 </section>
 
 <!-- الفوتر -->
-<footer class="footer">
-  <div class="container text-center">
-    <div class="social-icons mb-4">
+<footer class="footer text-center">
+  <div class="container">
+    <div class="social-icons">
       <img src="facebook-icon.svg" class="social-icon" alt="فيسبوك">
       <img src="instagram-icon.svg" class="social-icon" alt="إنستجرام">
     </div>
-    <p class="mb-0">© 2024 جايا للتغذية. جميع الحقوق محفوظة</p>
+    <p>© 2025 جايا للتغذية. جميع الحقوق محفوظة</p>
   </div>
 </footer>
 
 </body>
 </html>
-
