@@ -1,0 +1,1052 @@
+/* Reset Default Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: 'Noto Sans Arabic', sans-serif;
+    line-height: 1.8;
+    color: #2F2F2F;
+    background: #F8F9FA;
+    text-align: center;
+}
+
+html[lang="en"] body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+/* Colors */
+:root {
+    --primary: #1A3C34;
+    --secondary: #4CAF50;
+    --accent: #A5D6A7;
+    --highlight: #FFCA28;
+    --white: #FFFFFF;
+    --text: #2F2F2F;
+}
+
+/* Divider */
+.divider {
+    width: 80px;
+    height: 4px;
+    background: var(--highlight);
+    display: block;
+    margin: 0 auto 30px;
+    border-radius: 2px;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+html[lang="ar"] .divider {
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--white), var(--accent));
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.navbar-brand img {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: rotate(10deg);
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.nav-link {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 12px !important;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--highlight);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 70%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}
+
+#lang-toggle {
+    background: var(--highlight);
+    color: var(--primary);
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#lang-toggle:hover {
+    background: var(--secondary);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+#theme-toggle {
+    background: var(--highlight);
+    color: var(--primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #1A1A1A;
+    color: #E0E0E0;
+}
+
+body.dark-mode .header,
+body.dark-mode .footer {
+    background: #2A2A2A;
+}
+
+body.dark-mode .bg-light,
+body.dark-mode .recipes,
+body.dark-mode .news,
+body.dark-mode .partners {
+    background: #2A2A2A !important;
+}
+
+body.dark-mode .step,
+body.dark-mode .feature-item,
+body.dark-mode .recipe-card,
+body.dark-mode .news-card,
+body.dark-mode .diet-card,
+body.dark-mode .testimonial-card,
+body.dark-mode .accordion-body {
+    background: #3A3A3A;
+    color: #E0E0E0;
+}
+
+/* Hero Section */
+.hero {
+    padding: 150px 0 60px;
+    margin-top: 90px;
+    background: linear-gradient(135deg, rgba(26, 60, 52, 0.8), rgba(76, 175, 80, 0.7)), url('../images/hero-bg.jpg') no-repeat center center/cover;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-decor {
+    position: relative;
+    display: inline-block;
+}
+
+.decor-leaf-left,
+.decor-leaf-right {
+    position: absolute;
+    top: -20px;
+    width: 50px;
+    height: 50px;
+    background: url('https://www.transparenttextures.com/patterns/leaf.png') no-repeat center center;
+    opacity: 0.3;
+}
+
+.decor-leaf-left {
+    left: -60px;
+}
+
+.decor-leaf-right {
+    right: -60px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p.lead {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.hero .btn-primary {
+    background: var(--highlight);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero .btn-primary:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+
+.hero-image img {
+    max-width: 70%;
+    height: auto;
+    border: 4px solid var(--accent);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.hero-image video {
+    max-width: 70%;
+    max-height: 300px;
+    border: 4px solid var(--accent);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+/* تحسين مظهر أزرار التحكم في الفيديو */
+.hero-image video::-webkit-media-controls-panel {
+    background: rgba(26, 60, 52, 0.8);
+    border-radius: 10px;
+}
+
+.hero-image video::-webkit-media-controls-play-button,
+.hero-image video::-webkit-media-controls-volume-slider,
+.hero-image video::-webkit-media-controls-timeline {
+    filter: brightness(1.2);
+}
+
+.hero-image video::-webkit-media-controls-play-button {
+    background: var(--highlight);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.hero-image video::-webkit-media-controls-volume-slider {
+    background: var(--accent);
+}
+
+/* Services Section (صفحة الخدمات) */
+.services {
+    padding: 100px 0 60px;
+    margin-top: 90px;
+    background: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://www.transparenttextures.com/patterns/leaf.png');
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item i {
+    color: var(--primary);
+    background: var(--accent);
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.service-item h5 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 15px 0 10px;
+    color: var(--primary);
+}
+
+.service-item p {
+    color: #666;
+}
+
+/* Contact Section (صفحة اتصل بنا) */
+.contact {
+    padding: 100px 0 60px;
+    margin-top: 90px; /* زيادة margin-top لتجنب التداخل مع الـ Header */
+    background: var(--white);
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.contact form {
+    background: linear-gradient(135deg, var(--white), var(--accent));
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact .form-label {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.contact .form-control {
+    border-radius: 10px;
+    border: 1px solid var(--accent);
+    padding: 10px 15px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s ease;
+}
+
+.contact .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 8px rgba(26, 60, 52, 0.2);
+}
+
+.contact .btn-primary {
+    background: var(--highlight);
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact .btn-primary:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+
+/* How It Works */
+.how-it-works {
+    padding: 100px 0 60px;
+    margin-top: 90px;
+    background: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://www.transparenttextures.com/patterns/leaf.png');
+}
+
+.how-it-works h2,
+.why-choose h2,
+.recipes h2,
+.appointment h2,
+.news h2,
+.diets h2,
+.partners h2,
+.testimonials h2,
+.faq h2,
+.statistics h2,
+.contact h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step i {
+    color: var(--primary);
+    background: var(--accent);
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.step h5 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 15px 0 10px;
+    color: var(--primary);
+}
+
+.step p {
+    color: #666;
+}
+
+/* Why Choose Us */
+.why-choose {
+    padding: 100px 0 60px;
+    margin-top: 90px;
+    background: var(--white);
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, var(--accent), var(--white));
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    color: var(--primary);
+    background: var(--highlight);
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.feature-item h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 15px 0 10px;
+}
+
+.feature-item p {
+    color: #666;
+}
+
+/* Statistics Section */
+.statistics {
+    padding: 100px 0 60px;
+    margin-top: 90px;
+    background: linear-gradient(135deg, var(--accent), var(--white));
+}
+
+.stat-item {
+    padding: 20px;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 100px 0 60px;
+    margin-top: 90px;
+    background: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://www.transparenttextures.com/patterns/leaf.png');
+}
+
+.testimonial-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.client-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid var(--accent);
+}
+
+.testimonial-card h5 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.swiper-container {
+    padding-bottom: 40px;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--highlight);
+}
+
+/* Healthy Recipes */
+.recipes {
+    padding: 100px 0 60px;
+    margin-top: 90px;
+    background: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://www.transparenttextures.com/patterns/leaf.png');
+}
+
+.recipe-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.recipe-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--highlight);
+    transition: height 0.3s ease;
+}
+
+.recipe-card:hover::before {
+    height: 10px;
+}
+
+.recipe-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-card img.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+}
+
+.recipe-card .card-body {
+    text-align: center;
+}
+
+.recipe-card h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.recipe-card p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.recipe-card .btn-outline-primary {
+    border-color: var(--primary);
+    color: var(--primary);
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.recipe-card .btn-outline-primary:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+/* Appointment Section */
+.appointment {
+    padding: 100px 0 60px;
+    margin-top: 90px;
+    background: var(--white);
+}
+
+.appointment form {
+    background: linear-gradient(135deg, var(--white), var(--accent));
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.appointment .form-label {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.appointment .form-control {
+    border-radius: 10px;
+    border: 1px solid var(--accent);
+    padding: 10px 15px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s ease;
+}
+
+.appointment .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 8px rgba(26, 60, 52, 0.2);
+}
+
+.appointment .btn-primary {
+    background: var(--highlight);
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.appointment .btn-primary:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+
+.appointment-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    border: 4px solid var(--accent);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* News Articles */
+.news {
+    padding: 100px 0 60px;
+    margin-top: 90px;
+    background: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://www.transparenttextures.com/patterns/leaf.png');
+}
+
+.news-card {
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.news-card img {
+    border-radius: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--accent);
+}
+
+.news-card h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.news-card p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.news-card .btn-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.news-card .btn-link:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+/* FAQ Section */
+.faq {
+    padding: 100px 0 60px;
+    margin-top: 90px;
+    background: var(--white);
+}
+
+.accordion-button {
+    background: var(--accent);
+    color: var(--primary);
+    font-weight: 600;
+    border-radius: 10px !important;
+    transition: background 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.accordion-body {
+    background: var(--white);
+    border: 1px solid var(--accent);
+    border-radius: 0 0 10px 10px;
+    color: #666;
+}
+
+/* Special Diets */
+.diets {
+    padding: 100px 0 60px;
+    margin-top: 90px;
+    background: var(--white);
+}
+
+.diet-card {
+    background: linear-gradient(135deg, var(--white), var(--accent));
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.diet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.diet-card h5 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.diet-card .price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--highlight);
+    margin-bottom: 15px;
+}
+
+.diet-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.diet-card ul li {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.diet-card ul li::before {
+    content: '✔';
+    color: var(--secondary);
+    margin-right: 8px;
+}
+
+.diet-card .btn-primary {
+    background: var(--highlight);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.diet-card .btn-primary:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+
+/* Partners */
+.partners {
+    padding: 100px 0 60px;
+    margin-top: 90px;
+    background: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://www.transparenttextures.com/patterns/leaf.png');
+}
+
+.partners img {
+    max-width: 120px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.partners img:hover {
+    filter: grayscale(0);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--white);
+    padding: 60px 0;
+}
+
+.footer h5 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    color: #E0E0E0;
+    font-size: 1rem;
+}
+
+.footer a {
+    color: #E0E0E0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--highlight);
+}
+
+.footer .social-icons a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    color: var(--white);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: var(--highlight);
+    transform: scale(1.2);
+}
+
+/* Newsletter */
+.newsletter {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter h5 {
+    margin-bottom: 15px;
+}
+
+.newsletter .input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter .form-control {
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+    padding: 10px 20px;
+}
+
+.newsletter .btn-primary {
+    background: var(--highlight);
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: none;
+}
+
+.newsletter .btn-primary:hover {
+    background: var(--secondary);
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--highlight);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    background: var(--secondary);
+    transform: translateY(-5px);
+}
+
+/* WhatsApp Button */
+#whatsapp-btn {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    background: #25D366;
+    color: var(--white);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#whatsapp-btn:hover {
+    transform: scale(1.1);
+}
+
+/* AOS Animations */
+[data-aos="zoom-in"] {
+    transform: scale(0.8);
+}
+
+[data-aos="zoom-in"].aos-animate {
+    transform: scale(1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero,
+    .services,
+    .contact,
+    .how-it-works,
+    .why-choose,
+    .recipes,
+    .appointment,
+    .news,
+    .diets,
+    .partners,
+    .testimonials,
+    .faq,
+    .statistics {
+        padding: 80px 0 40px;
+        margin-top: 70px; /* تقليل margin-top للشاشات الصغيرة */
+    }
+
+    .hero h1,
+    .services h2,
+    .contact h2,
+    .how-it-works h2,
+    .why-choose h2,
+    .recipes h2,
+    .appointment h2,
+    .news h2,
+    .diets h2,
+    .partners h2,
+    .testimonials h2,
+    .faq h2,
+    .statistics h2 {
+        font-size: 2rem;
+    }
+
+    .hero p.lead {
+        font-size: 1rem;
+    }
+
+    .hero .btn-primary {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .hero-image img,
+    .hero-image video {
+        max-width: 90%;
+        max-height: 250px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 10px !important;
+    }
+
+    #lang-toggle {
+        margin: 10px auto;
+    }
+
+    #theme-toggle {
+        margin: 10px auto;
+    }
+
+    .step,
+    .feature-item,
+    .recipe-card,
+    .news-card,
+    .diet-card,
+    .testimonial-card,
+    .service-item {
+        margin-bottom: 20px;
+    }
+
+    .recipe-card img.card-img-top {
+        max-height: 150px;
+    }
+
+    .decor-leaf-left,
+    .decor-leaf-right {
+        display: none;
+    }
+}
