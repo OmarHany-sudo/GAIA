@@ -1,110 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشاريعي - عمر محمد خلف</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<!-- الهيدر -->
-<header>
-  <div class="container text-center">
-    <img src="logo.png" class="logo" alt="Gaia Nutrition">
-    <h1 class="fadeIn">Gaia Nutrition</h1>
-    <button id="toggle-mode" class="btn-mode">🌙</button>
-    <nav>
-        <ul>
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="projects.html">المشاريع</a></li>
-            <li><a href="about.html" class="active">من أنا</a></li>
-            <li><a href="contact.html">اتصل بي</a></li>
-            <li><a href="nutrition-services.html">خدمات التغذية</a></li>
-        </ul>
-    </nav>
-  </div>
-</header>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggleModeBtn = document.getElementById("toggle-mode");
-    const body = document.body;
-
-    // التحقق مما إذا كان المستخدم قد قام بتحديد وضع معين سابقًا
-    const savedMode = localStorage.getItem("theme");
-
-    if (savedMode === "night") {
-        body.classList.add("night-mode");
-        toggleModeBtn.textContent = "☀️"; // تغيير الرمز إلى الشمس
-    } else {
-        body.classList.remove("night-mode");
-        toggleModeBtn.textContent = "🌙"; // تغيير الرمز إلى القمر
-    }
-
-    // عند النقر على الزر، تغيير المظهر
-    toggleModeBtn.addEventListener("click", () => {
-        body.classList.toggle("night-mode");
-
-        // حفظ التفضيل في Local Storage
-        if (body.classList.contains("night-mode")) {
-            localStorage.setItem("theme", "night");
-            toggleModeBtn.textContent = "☀️"; // وضع النهار
-        } else {
-            localStorage.setItem("theme", "day");
-            toggleModeBtn.textContent = "🌙"; // وضع الليل
-        }
-    });
-});
-</script>
-
-
-<!-- قسم المشاريع -->
-<section class="hero-section">
-  <div class="container">
-    <h1 class="hero-title mb-4">استكشف مشاريعي</h1>
-    <p class="lead fs-4">مجموعة من المشاريع التي طورتها في مجالي التغذية وتطوير الويب</p>
-  </div>
-</section>
-
-<main>
-    <section class="projects-section fadeIn py-5">
-        <div class="container">
-            <h1 class="text-center mb-4">مشاريعي</h1>
-            
-            <div class="project-item">
-                <h2>تطبيق متابعة التغذية</h2>
-                <p>
-                    تطبيق ويب يساعد المستخدمين على تتبع استهلاكهم الغذائي اليومي 
-                    ويوفر توصيات شخصية لنمط حياة صحي.
-                </p>
-            </div>
-
-            <div class="project-item">
-                <h2>موقعي الشخصي</h2>
-                <p>
-                    قمت بتصميم وتطوير موقعي الشخصي لعرض خبراتي في مجال 
-                    التغذية وتطوير الويب.
-                </p>
-            </div>
-
-            <div class="project-item">
-                <h2>مدونة صحية</h2>
-                <p>
-                    أنشأت منصة تدوين حيث يمكن للمستخدمين قراءة أحدث المقالات 
-                    حول التغذية وأسلوب الحياة الصحي.
-                </p>
-            </div>
-        </div>
-    </section>
-</main>
-
-<!-- الفوتر -->
-<footer class="footer">
-  <div class="container text-center">
-    <p class="mb-0">© 2024 عمر محمد خلف. جميع الحقوق محفوظة</p>
-  </div>
-</footer>
-
-</body>
-</html>
