@@ -37,9 +37,6 @@ html[lang="en"] body {
     display: block;
     margin: 0 auto 30px;
     border-radius: 2px;
-    position: relative;
-    left: 0;
-    right: 0;
 }
 
 html[lang="ar"] .divider {
@@ -63,6 +60,7 @@ html[lang="ar"] .divider {
 
 .navbar-brand img {
     height: 50px;
+    max-width: 100px; /* تحسين للهواتف */
     transition: transform 0.3s ease;
 }
 
@@ -78,7 +76,7 @@ html[lang="ar"] .divider {
 }
 
 .nav-item {
-    margin: 0 10px;
+    margin: 0 5px; /* تقليص الهوامش على الهواتف */
 }
 
 .nav-link {
@@ -117,7 +115,7 @@ html[lang="ar"] .divider {
     color: var(--primary);
     font-weight: 600;
     border-radius: 20px;
-    padding: 8px 20px;
+    padding: 6px 15px; /* تقليص الحجم على الهواتف */
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -134,8 +132,8 @@ html[lang="ar"] .divider {
     background: var(--highlight);
     color: var(--primary);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 35px; /* تقليص الحجم على الهواتف */
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -178,8 +176,8 @@ body.dark-mode .accordion-body {
 
 /* Hero Section */
 .hero {
-    padding: 150px 0 60px;
-    margin-top: 90px;
+    padding: 120px 0 40px; /* تقليص الـ padding على الهواتف */
+    margin-top: 60px; /* تقليص الـ margin على الهواتف */
     background: linear-gradient(135deg, rgba(26, 60, 52, 0.8), rgba(76, 175, 80, 0.7)), url('../images/hero-bg.jpg') no-repeat center center/cover;
     color: var(--white);
     position: relative;
@@ -195,40 +193,40 @@ body.dark-mode .accordion-body {
 .decor-leaf-right {
     position: absolute;
     top: -20px;
-    width: 50px;
-    height: 50px;
+    width: 40px; /* تقليص الحجم على الهواتف */
+    height: 40px;
     background: url('https://www.transparenttextures.com/patterns/leaf.png') no-repeat center center;
     opacity: 0.3;
 }
 
 .decor-leaf-left {
-    left: -60px;
+    left: -50px;
 }
 
 .decor-leaf-right {
-    right: -60px;
+    right: -50px;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem; /* تقليص الحجم على الهواتف */
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero p.lead {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
+    font-size: 1.1rem; /* تقليص الحجم على الهواتف */
+    margin-bottom: 20px;
     background: rgba(255, 255, 255, 0.1);
-    padding: 10px 20px;
+    padding: 8px 15px;
     border-radius: 10px;
 }
 
 .hero .btn-primary {
     background: var(--highlight);
     border: none;
-    padding: 12px 30px;
-    font-size: 1.1rem;
+    padding: 10px 25px; /* تقليص الحجم على الهواتف */
+    font-size: 1rem;
     transition: background 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -239,7 +237,7 @@ body.dark-mode .accordion-body {
 }
 
 .hero-image img {
-    max-width: 70%;
+    max-width: 90%; /* زيادة الحجم المتاح على الهواتف */
     height: auto;
     border: 4px solid var(--accent);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
@@ -247,8 +245,8 @@ body.dark-mode .accordion-body {
 }
 
 .hero-image video {
-    max-width: 70%;
-    max-height: 300px;
+    max-width: 90%;
+    max-height: 250px; /* تقليص الحجم على الهواتف */
     border: 4px solid var(--accent);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
@@ -276,19 +274,18 @@ body.dark-mode .accordion-body {
     background: var(--accent);
 }
 
-/* Services Section (صفحة الخدمات) */
+/* Services Section */
 .services {
-    padding: 100px 0 60px;
-    margin-top: 90px;
+    padding: 80px 0 40px; /* تقليص الـ padding على الهواتف */
+    margin-top: 60px; /* تقليص الـ margin على الهواتف */
     background: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://www.transparenttextures.com/patterns/leaf.png');
 }
 
 .services h2 {
-    font-size: 2.5rem;
+    font-size: 2rem; /* تقليص الحجم على الهواتف */
     font-weight: 700;
     color: var(--primary);
-    margin-bottom: 20px;
-    position: relative;
+    margin-bottom: 15px;
 }
 
 .service-item {
@@ -296,10 +293,11 @@ body.dark-mode .accordion-body {
     flex-direction: column;
     align-items: center;
     background: var(--white);
-    padding: 20px;
-    border-radius: 15px;
+    padding: 15px; /* تقليص الـ padding على الهواتف */
+    border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    margin-bottom: 20px; /* إضافة هوامش بين الكروت */
 }
 
 .service-item:hover {
@@ -309,40 +307,40 @@ body.dark-mode .accordion-body {
 .service-item i {
     color: var(--primary);
     background: var(--accent);
-    padding: 15px;
+    padding: 12px; /* تقليص الحجم على الهواتف */
     border-radius: 50%;
 }
 
 .service-item h5 {
-    font-size: 1.3rem;
+    font-size: 1.1rem; /* تقليص الحجم على الهواتف */
     font-weight: 600;
-    margin: 15px 0 10px;
+    margin: 10px 0;
     color: var(--primary);
 }
 
 .service-item p {
     color: #666;
+    font-size: 0.9rem; /* تقليص الحجم على الهواتف */
 }
 
-/* Contact Section (صفحة اتصل بنا) */
+/* Contact Section */
 .contact {
-    padding: 100px 0 60px;
-    margin-top: 90px; /* زيادة margin-top لتجنب التداخل مع الـ Header */
+    padding: 80px 0 40px;
+    margin-top: 60px;
     background: var(--white);
 }
 
 .contact h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--primary);
-    margin-bottom: 20px;
-    position: relative;
+    margin-bottom: 15px;
 }
 
 .contact form {
     background: linear-gradient(135deg, var(--white), var(--accent));
-    padding: 30px;
-    border-radius: 15px;
+    padding: 20px; /* تقليص الـ padding على الهواتف */
+    border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -354,7 +352,7 @@ body.dark-mode .accordion-body {
 .contact .form-control {
     border-radius: 10px;
     border: 1px solid var(--accent);
-    padding: 10px 15px;
+    padding: 8px 12px; /* تقليص الحجم على الهواتف */
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
     transition: border-color 0.3s ease;
 }
@@ -367,7 +365,7 @@ body.dark-mode .accordion-body {
 .contact .btn-primary {
     background: var(--highlight);
     border: none;
-    padding: 10px 30px;
+    padding: 8px 25px; /* تقليص الحجم على الهواتف */
     border-radius: 20px;
     transition: background 0.3s ease, transform 0.3s ease;
 }
@@ -379,8 +377,8 @@ body.dark-mode .accordion-body {
 
 /* How It Works */
 .how-it-works {
-    padding: 100px 0 60px;
-    margin-top: 90px;
+    padding: 80px 0 40px;
+    margin-top: 60px;
     background: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://www.transparenttextures.com/patterns/leaf.png');
 }
 
@@ -395,11 +393,10 @@ body.dark-mode .accordion-body {
 .faq h2,
 .statistics h2,
 .contact h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--primary);
-    margin-bottom: 20px;
-    position: relative;
+    margin-bottom: 15px;
 }
 
 .step {
@@ -407,8 +404,8 @@ body.dark-mode .accordion-body {
     flex-direction: column;
     align-items: center;
     background: var(--white);
-    padding: 20px;
-    border-radius: 15px;
+    padding: 15px;
+    border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -420,25 +417,26 @@ body.dark-mode .accordion-body {
 .step i {
     color: var(--primary);
     background: var(--accent);
-    padding: 15px;
+    padding: 12px;
     border-radius: 50%;
 }
 
 .step h5 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin: 15px 0 10px;
+    margin: 10px 0;
     color: var(--primary);
 }
 
 .step p {
     color: #666;
+    font-size: 0.9rem;
 }
 
 /* Why Choose Us */
 .why-choose {
-    padding: 100px 0 60px;
-    margin-top: 90px;
+    padding: 80px 0 40px;
+    margin-top: 60px;
     background: var(--white);
 }
 
@@ -447,8 +445,8 @@ body.dark-mode .accordion-body {
     flex-direction: column;
     align-items: center;
     background: linear-gradient(135deg, var(--accent), var(--white));
-    padding: 20px;
-    border-radius: 15px;
+    padding: 15px;
+    border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -460,54 +458,55 @@ body.dark-mode .accordion-body {
 .feature-item i {
     color: var(--primary);
     background: var(--highlight);
-    padding: 15px;
+    padding: 12px;
     border-radius: 50%;
 }
 
 .feature-item h5 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin: 15px 0 10px;
+    margin: 10px 0;
 }
 
 .feature-item p {
     color: #666;
+    font-size: 0.85rem;
 }
 
 /* Statistics Section */
 .statistics {
-    padding: 100px 0 60px;
-    margin-top: 90px;
+    padding: 80px 0 40px;
+    margin-top: 60px;
     background: linear-gradient(135deg, var(--accent), var(--white));
 }
 
 .stat-item {
-    padding: 20px;
+    padding: 15px;
 }
 
 .stat-item h3 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--primary);
     margin-bottom: 10px;
 }
 
 .stat-item p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #666;
 }
 
 /* Testimonials Section */
 .testimonials {
-    padding: 100px 0 60px;
-    margin-top: 90px;
+    padding: 80px 0 40px;
+    margin-top: 60px;
     background: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://www.transparenttextures.com/patterns/leaf.png');
 }
 
 .testimonial-card {
     background: var(--white);
-    border-radius: 15px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -525,7 +524,7 @@ body.dark-mode .accordion-body {
 }
 
 .testimonial-card h5 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--primary);
     margin-bottom: 10px;
 }
@@ -540,8 +539,8 @@ body.dark-mode .accordion-body {
 
 /* Healthy Recipes */
 .recipes {
-    padding: 100px 0 60px;
-    margin-top: 90px;
+    padding: 80px 0 40px;
+    margin-top: 60px;
     background: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://www.transparenttextures.com/patterns/leaf.png');
 }
 
@@ -583,7 +582,7 @@ body.dark-mode .accordion-body {
 }
 
 .recipe-card h5 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--primary);
     margin-bottom: 10px;
@@ -597,7 +596,7 @@ body.dark-mode .accordion-body {
 .recipe-card .btn-outline-primary {
     border-color: var(--primary);
     color: var(--primary);
-    padding: 8px 20px;
+    padding: 6px 15px; /* تقليص الحجم على الهواتف */
     border-radius: 20px;
     transition: all 0.3s ease;
 }
@@ -610,15 +609,15 @@ body.dark-mode .accordion-body {
 
 /* Appointment Section */
 .appointment {
-    padding: 100px 0 60px;
-    margin-top: 90px;
+    padding: 80px 0 40px;
+    margin-top: 60px;
     background: var(--white);
 }
 
 .appointment form {
     background: linear-gradient(135deg, var(--white), var(--accent));
-    padding: 30px;
-    border-radius: 15px;
+    padding: 20px; /* تقليص الـ padding على الهواتف */
+    border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -630,7 +629,7 @@ body.dark-mode .accordion-body {
 .appointment .form-control {
     border-radius: 10px;
     border: 1px solid var(--accent);
-    padding: 10px 15px;
+    padding: 8px 12px; /* تقليص الحجم على الهواتف */
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
     transition: border-color 0.3s ease;
 }
@@ -643,7 +642,7 @@ body.dark-mode .accordion-body {
 .appointment .btn-primary {
     background: var(--highlight);
     border: none;
-    padding: 10px 30px;
+    padding: 8px 25px; /* تقليص الحجم على الهواتف */
     border-radius: 20px;
     transition: background 0.3s ease, transform 0.3s ease;
 }
@@ -655,23 +654,23 @@ body.dark-mode .accordion-body {
 
 .appointment-image img {
     max-width: 100%;
-    border-radius: 15px;
+    border-radius: 12px;
     border: 4px solid var(--accent);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* News Articles */
 .news {
-    padding: 100px 0 60px;
-    margin-top: 90px;
+    padding: 80px 0 40px;
+    margin-top: 60px;
     background: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://www.transparenttextures.com/patterns/leaf.png');
 }
 
 .news-card {
     background: var(--white);
-    border-radius: 15px;
+    border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -692,7 +691,7 @@ body.dark-mode .accordion-body {
 }
 
 .news-card h5 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--primary);
     margin-bottom: 10px;
@@ -717,8 +716,8 @@ body.dark-mode .accordion-body {
 
 /* FAQ Section */
 .faq {
-    padding: 100px 0 60px;
-    margin-top: 90px;
+    padding: 80px 0 40px;
+    margin-top: 60px;
     background: var(--white);
 }
 
@@ -744,16 +743,16 @@ body.dark-mode .accordion-body {
 
 /* Special Diets */
 .diets {
-    padding: 100px 0 60px;
-    margin-top: 90px;
+    padding: 80px 0 40px;
+    margin-top: 60px;
     background: var(--white);
 }
 
 .diet-card {
     background: linear-gradient(135deg, var(--white), var(--accent));
-    border-radius: 15px;
+    border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -766,14 +765,14 @@ body.dark-mode .accordion-body {
 }
 
 .diet-card h5 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--primary);
     margin-bottom: 10px;
 }
 
 .diet-card .price {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--highlight);
     margin-bottom: 15px;
@@ -786,7 +785,7 @@ body.dark-mode .accordion-body {
 }
 
 .diet-card ul li {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #666;
     margin-bottom: 5px;
 }
@@ -800,7 +799,7 @@ body.dark-mode .accordion-body {
 .diet-card .btn-primary {
     background: var(--highlight);
     border: none;
-    padding: 10px 20px;
+    padding: 6px 15px; /* تقليص الحجم على الهواتف */
     border-radius: 20px;
     transition: background 0.3s ease, transform 0.3s ease;
 }
@@ -812,13 +811,13 @@ body.dark-mode .accordion-body {
 
 /* Partners */
 .partners {
-    padding: 100px 0 60px;
-    margin-top: 90px;
+    padding: 80px 0 40px;
+    margin-top: 60px;
     background: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://www.transparenttextures.com/patterns/leaf.png');
 }
 
 .partners img {
-    max-width: 120px;
+    max-width: 100px; /* تقليص الحجم على الهواتف */
     filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
@@ -831,18 +830,18 @@ body.dark-mode .accordion-body {
 .footer {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--white);
-    padding: 60px 0;
+    padding: 40px 0; /* تقليص الـ padding على الهواتف */
 }
 
 .footer h5 {
-    font-size: 1.3rem;
+    font-size: 1.1rem; /* تقليص الحجم على الهواتف */
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .footer p {
     color: #E0E0E0;
-    font-size: 1rem;
+    font-size: 0.9rem; /* تقليص الحجم على الهواتف */
 }
 
 .footer a {
@@ -856,8 +855,8 @@ body.dark-mode .accordion-body {
 }
 
 .footer .social-icons a {
-    font-size: 1.5rem;
-    margin: 0 10px;
+    font-size: 1.3rem; /* تقليص الحجم على الهواتف */
+    margin: 0 8px;
     color: var(--white);
     transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -869,29 +868,29 @@ body.dark-mode .accordion-body {
 
 /* Newsletter */
 .newsletter {
-    max-width: 500px;
+    max-width: 400px; /* تقليص العرض على الهواتف */
     margin: 0 auto;
 }
 
 .newsletter h5 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .newsletter .input-group {
     display: flex;
-    gap: 10px;
+    gap: 8px; /* تقليص الهوامش */
 }
 
 .newsletter .form-control {
     border-radius: 20px;
     border: 1px solid var(--accent);
-    padding: 10px 20px;
+    padding: 8px 15px; /* تقليص الحجم على الهواتف */
 }
 
 .newsletter .btn-primary {
     background: var(--highlight);
     border-radius: 20px;
-    padding: 10px 20px;
+    padding: 8px 15px; /* تقليص الحجم على الهواتف */
     border: none;
 }
 
@@ -902,13 +901,13 @@ body.dark-mode .accordion-body {
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px; /* تقليص المسافة على الهواتف */
+    right: 20px; /* تقليص المسافة على الهواتف */
     background: var(--highlight);
     border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 40px; /* تقليص الحجم على الهواتف */
+    height: 40px; /* تقليص الحجم على الهواتف */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -931,17 +930,17 @@ body.dark-mode .accordion-body {
 /* WhatsApp Button */
 #whatsapp-btn {
     position: fixed;
-    bottom: 90px;
-    right: 30px;
+    bottom: 80px; /* تقليص المسافة على الهواتف */
+    right: 20px; /* تقليص المسافة على الهواتف */
     background: #25D366;
     color: var(--white);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 40px; /* تقليص الحجم على الهواتف */
+    height: 40px; /* تقليص الحجم على الهواتف */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* تقليص الحجم على الهواتف */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
@@ -961,6 +960,17 @@ body.dark-mode .accordion-body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .header {
+        padding: 5px 0;
+    }
+    .navbar-brand img {
+        max-width: 80px;
+        height: auto;
+    }
+    .nav-link {
+        font-size: 1rem;
+        padding: 6px 10px !important;
+    }
     .hero,
     .services,
     .contact,
@@ -974,10 +984,9 @@ body.dark-mode .accordion-body {
     .testimonials,
     .faq,
     .statistics {
-        padding: 80px 0 40px;
-        margin-top: 70px; /* تقليل margin-top للشاشات الصغيرة */
+        padding: 60px 0 30px;
+        margin-top: 50px; /* تقليل margin-top للشاشات الصغيرة */
     }
-
     .hero h1,
     .services h2,
     .contact h2,
@@ -991,46 +1000,40 @@ body.dark-mode .accordion-body {
     .testimonials h2,
     .faq h2,
     .statistics h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
-
     .hero p.lead {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
-
     .hero .btn-primary {
-        padding: 10px 20px;
-        font-size: 1rem;
+        padding: 8px 15px;
+        font-size: 0.9rem;
     }
-
     .hero-image img,
     .hero-image video {
         max-width: 90%;
-        max-height: 250px;
+        max-height: 200px;
     }
-
     .navbar-nav {
         text-align: center;
         flex-direction: column;
     }
-
     .nav-item {
         margin: 5px 0;
     }
-
     .nav-link {
-        font-size: 1rem;
-        padding: 10px !important;
+        font-size: 0.9rem;
+        padding: 8px !important;
     }
-
     #lang-toggle {
-        margin: 10px auto;
+        margin: 5px auto;
+        padding: 4px 10px;
     }
-
     #theme-toggle {
-        margin: 10px auto;
+        margin: 5px auto;
+        width: 30px;
+        height: 30px;
     }
-
     .step,
     .feature-item,
     .recipe-card,
@@ -1038,15 +1041,99 @@ body.dark-mode .accordion-body {
     .diet-card,
     .testimonial-card,
     .service-item {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
+        padding: 10px;
     }
-
     .recipe-card img.card-img-top {
-        max-height: 150px;
+        max-height: 120px;
     }
-
     .decor-leaf-left,
     .decor-leaf-right {
         display: none;
+    }
+    .contact form,
+    .appointment form {
+        padding: 15px;
+    }
+    .contact .form-control,
+    .appointment .form-control {
+        padding: 6px 10px;
+    }
+    .contact .btn-primary,
+    .appointment .btn-primary {
+        padding: 6px 20px;
+    }
+    .recipe-card .btn-outline-primary,
+    .diet-card .btn-primary {
+        padding: 4px 12px;
+    }
+    .footer {
+        padding: 30px 0;
+    }
+    .footer h5 {
+        font-size: 1rem;
+    }
+    .footer p {
+        font-size: 0.8rem;
+    }
+    .footer .social-icons a {
+        font-size: 1.2rem;
+        margin: 0 5px;
+    }
+    #back-to-top,
+    #whatsapp-btn {
+        width: 35px;
+        height: 35px;
+        bottom: 15px;
+        right: 15px;
+    }
+    #whatsapp-btn {
+        bottom: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    .hero p.lead {
+        font-size: 0.8rem;
+    }
+    .services h2,
+    .contact h2,
+    .how-it-works h2,
+    .why-choose h2,
+    .recipes h2,
+    .appointment h2,
+    .news h2,
+    .diets h2,
+    .partners h2,
+    .testimonials h2,
+    .faq h2,
+    .statistics h2 {
+        font-size: 1.5rem;
+    }
+    .service-item,
+    .step,
+    .feature-item,
+    .testimonial-card {
+        margin-bottom: 10px;
+    }
+    .client-img {
+        width: 50px;
+        height: 50px;
+    }
+    .recipe-card img.card-img-top {
+        max-height: 100px;
+    }
+    .appointment-image img,
+    .news-card img {
+        max-height: 150px;
+    }
+    .stat-item h3 {
+        font-size: 1.5rem;
+    }
+    .stat-item p {
+        font-size: 0.9rem;
     }
 }
